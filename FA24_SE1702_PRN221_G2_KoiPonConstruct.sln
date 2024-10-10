@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoiPondConstruct.Service", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoiPondConstruct.WPFApplication", "KoiPondConstruct.WPFApplication\KoiPondConstruct.WPFApplication.csproj", "{B64223EC-F63A-470B-90CD-7740ACBFADF9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoiPondConstruct.RazorWebApplication", "KoiPondConstruct.RazorWebApplication\KoiPondConstruct.RazorWebApplication.csproj", "{369DB489-BA8C-4FB6-A63E-B3B5F78593D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B64223EC-F63A-470B-90CD-7740ACBFADF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B64223EC-F63A-470B-90CD-7740ACBFADF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B64223EC-F63A-470B-90CD-7740ACBFADF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{369DB489-BA8C-4FB6-A63E-B3B5F78593D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{369DB489-BA8C-4FB6-A63E-B3B5F78593D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{369DB489-BA8C-4FB6-A63E-B3B5F78593D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{369DB489-BA8C-4FB6-A63E-B3B5F78593D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
