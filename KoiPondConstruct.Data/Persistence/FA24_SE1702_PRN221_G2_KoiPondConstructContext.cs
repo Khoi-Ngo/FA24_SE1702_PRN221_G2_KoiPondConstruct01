@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace KoiPondConstruct.Data.Entities;
 
@@ -16,6 +17,20 @@ public partial class FA24_SE1702_PRN221_G2_KoiPondConstructContext : DbContext
         : base(options)
     {
     }
+
+    //public static string GetConnectionString(string connectionStringName)
+    //{
+    //    var config = new ConfigurationBuilder()
+    //        .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+    //        .AddJsonFile("appsettings.json")
+    //        .Build();
+
+    //    string connectionString = config.GetConnectionString(connectionStringName);
+    //    return connectionString;
+    //}
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //=> optionsBuilder.UseSqlServer(GetConnectionString("DefaultConnection"));
+        => optionsBuilder.UseSqlServer("Server=localhost,1433;Database=FA24_SE1702_PRN221_G2_KoiPonConstr;User Id=SA;Password=yourStrong(!)Password;TrustServerCertificate=True;");
 
     public virtual DbSet<TblCustomerRequest> TblCustomerRequests { get; set; }
 
