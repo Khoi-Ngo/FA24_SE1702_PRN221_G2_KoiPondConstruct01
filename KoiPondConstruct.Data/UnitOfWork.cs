@@ -1,21 +1,22 @@
 ﻿using KoiPondConstruct.Data.Entities;
 using KoiPondConstruct.Data.Repository.Impl;
-
+using Microsoft.EntityFrameworkCore.Storage;
+using System.Threading.Tasks;
 
 namespace KoiPondConstruct.Data
 {
-    public class UnitOfWork
+    public class UnitOfWork 
     {
-        private FA24_SE1702_PRN221_G2_KoiPondConstructContext _context;
+        private readonly FA24_SE1702_PRN221_G2_KoiPondConstructContext _context;
+        private IDbContextTransaction _transaction; // Declare the transaction field
         private UserRepository _userRepository;
         private CustomerRequestDetailRepository _customerRequestDetailRepository;
         private CustomerRequestRepository _customerRequestRepository;
         private SuggestionRepository _suggestionRepository;
 
-        public UnitOfWork()
+        public UnitOfWork(FA24_SE1702_PRN221_G2_KoiPondConstructContext context)
         {
-            _context ??= new FA24_SE1702_PRN221_G2_KoiPondConstructContext();// ??= meaning created new instance only if null
-
+            _context = context ?? new FA24_SE1702_PRN221_G2_KoiPondConstructContext();
         }
 
         public UserRepository UserRepository
@@ -23,9 +24,9 @@ namespace KoiPondConstruct.Data
             get
             {
                 return _userRepository ??= new UserRepository(_context);
-
             }
         }
+
         public CustomerRequestRepository CustomerRequestRepository
         {
             get
@@ -49,5 +50,7 @@ namespace KoiPondConstruct.Data
                 return _suggestionRepository ??= new SuggestionRepository(_context);
             }
         }
+
+       
     }
 }

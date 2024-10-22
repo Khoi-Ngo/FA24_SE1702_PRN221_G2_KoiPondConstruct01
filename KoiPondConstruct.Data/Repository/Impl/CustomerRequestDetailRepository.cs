@@ -1,5 +1,6 @@
 ﻿using KoiPondConstruct.Data.Base;
 using KoiPondConstruct.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,5 +19,11 @@ namespace KoiPondConstruct.Data.Repository.Impl
         {
             _context = context;
         }
+
+        public async Task<List<TblCustomerRequestDetail>> GetAllByCuReqIdAsync(long? id)
+            => await _context.TblCustomerRequestDetails.Where(d => d.RequestId == id).ToListAsync();
+
+        public  async Task<List<TblCustomerRequestDetail>> GetAllWithMainReuqestAsync()
+        => await _context.TblCustomerRequestDetails.Include(d => d.Request).ToListAsync();
     }
 }

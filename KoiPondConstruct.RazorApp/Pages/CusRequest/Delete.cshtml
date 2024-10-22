@@ -1,0 +1,70 @@
+﻿@page
+@model KoiPondConstruct.RazorApp.Pages.CusRequest.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Customer Request Details</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.customerRequestDetailDTO.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.Priority)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.customerRequestDetailDTO.Priority)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.CreatedTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.customerRequestDetailDTO.CreatedTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.StartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.customerRequestDetailDTO.StartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.EndDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.customerRequestDetailDTO.EndDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.customerRequestDetailDTO.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.IsDeleted)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.customerRequestDetailDTO.IsDeleted)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.customerRequestDetailDTO.Address)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="customerRequestDetailDTO.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

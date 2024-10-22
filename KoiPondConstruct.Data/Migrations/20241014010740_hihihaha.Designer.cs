@@ -4,6 +4,7 @@ using KoiPondConstruct.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KoiPondConstruct.Data.Migrations
 {
     [DbContext(typeof(FA24_SE1702_PRN221_G2_KoiPondConstructContext))]
-    partial class FA24_SE1702_PRN221_G2_KoiPondConstructContextModelSnapshot : ModelSnapshot
+    [Migration("20241014010740_hihihaha")]
+    partial class hihihaha
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

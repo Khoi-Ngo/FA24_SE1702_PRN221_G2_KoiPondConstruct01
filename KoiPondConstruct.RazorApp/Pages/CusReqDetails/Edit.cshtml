@@ -1,0 +1,112 @@
+﻿@page
+@model KoiPondConstruct.RazorApp.Pages.CusReqDetails.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TblCustomerRequestDetail</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TblCustomerRequestDetail.Id" />
+            <input type="hidden" asp-for="TblCustomerRequestDetail.RequestId" /> <!-- Hidden Input -->
+            <input type="hidden" asp-for="TblCustomerRequestDetail.SampleDesignId" /> <!-- Hidden Input -->
+
+            <div class="form-group">
+                <label asp-for="TblCustomerRequestDetail.RequestId" class="control-label"></label>
+                <input type="text" class="form-control" value="@Model.TblCustomerRequestDetail.RequestId" readonly />
+                <span asp-validation-for="TblCustomerRequestDetail.RequestId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TblCustomerRequestDetail.SampleDesignId" class="control-label"></label>
+                <input type="text" class="form-control" value="@Model.TblCustomerRequestDetail.SampleDesignId" readonly />
+                <span asp-validation-for="TblCustomerRequestDetail.SampleDesignId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TblCustomerRequestDetail.HomeownerFirstName" class="control-label"></label>
+                <input asp-for="TblCustomerRequestDetail.HomeownerFirstName" class="form-control" />
+                <span asp-validation-for="TblCustomerRequestDetail.HomeownerFirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblCustomerRequestDetail.HomeownerLastName" class="control-label"></label>
+                <input asp-for="TblCustomerRequestDetail.HomeownerLastName" class="form-control" />
+                <span asp-validation-for="TblCustomerRequestDetail.HomeownerLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblCustomerRequestDetail.HomeownerPhone" class="control-label"></label>
+                <input asp-for="TblCustomerRequestDetail.HomeownerPhone" class="form-control" />
+                <span asp-validation-for="TblCustomerRequestDetail.HomeownerPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblCustomerRequestDetail.HomeownerDateOfBirth" class="control-label"></label>
+                <input asp-for="TblCustomerRequestDetail.HomeownerDateOfBirth" class="form-control" />
+                <span asp-validation-for="TblCustomerRequestDetail.HomeownerDateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblCustomerRequestDetail.Height" class="control-label"></label>
+                <input asp-for="TblCustomerRequestDetail.Height" class="form-control" />
+                <span asp-validation-for="TblCustomerRequestDetail.Height" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblCustomerRequestDetail.Width" class="control-label"></label>
+                <input asp-for="TblCustomerRequestDetail.Width" class="form-control" />
+                <span asp-validation-for="TblCustomerRequestDetail.Width" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblCustomerRequestDetail.Length" class="control-label"></label>
+                <input asp-for="TblCustomerRequestDetail.Length" class="form-control" />
+                <span asp-validation-for="TblCustomerRequestDetail.Length" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblCustomerRequestDetail.Shape" class="control-label"></label>
+                <input asp-for="TblCustomerRequestDetail.Shape" class="form-control" />
+                <span asp-validation-for="TblCustomerRequestDetail.Shape" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblCustomerRequestDetail.Budget" class="control-label"></label>
+                <input asp-for="TblCustomerRequestDetail.Budget" class="form-control" />
+                <span asp-validation-for="TblCustomerRequestDetail.Budget" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblCustomerRequestDetail.Type" class="control-label"></label>
+                <input asp-for="TblCustomerRequestDetail.Type" class="form-control" />
+                <span asp-validation-for="TblCustomerRequestDetail.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblCustomerRequestDetail.Address" class="control-label"></label>
+                <input asp-for="TblCustomerRequestDetail.Address" class="form-control" />
+                <span asp-validation-for="TblCustomerRequestDetail.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblCustomerRequestDetail.Note" class="control-label"></label>
+                <input asp-for="TblCustomerRequestDetail.Note" class="form-control" />
+                <span asp-validation-for="TblCustomerRequestDetail.Note" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TblCustomerRequestDetail.IsDeleted" /> @Html.DisplayNameFor(model => model.TblCustomerRequestDetail.IsDeleted)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

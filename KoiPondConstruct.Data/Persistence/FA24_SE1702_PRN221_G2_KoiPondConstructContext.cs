@@ -17,21 +17,17 @@ public partial class FA24_SE1702_PRN221_G2_KoiPondConstructContext : DbContext
         : base(options)
     {
     }
-
-    //public static string GetConnectionString(string connectionStringName)
-    //{
-    //    var config = new ConfigurationBuilder()
-    //        .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-    //        .AddJsonFile("appsettings.json")
-    //        .Build();
-
-    //    string connectionString = config.GetConnectionString(connectionStringName);
-    //    return connectionString;
-    //}
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //=> optionsBuilder.UseSqlServer(GetConnectionString("DefaultConnection"));
-        => optionsBuilder.UseSqlServer("Server=localhost,1433;Database=FA24_SE1702_PRN221_G2_KoiPonConstr;User Id=SA;Password=yourStrong(!)Password;TrustServerCertificate=True;");
-
+    {
+        //var builder = new ConfigurationBuilder()
+        //                          .SetBasePath(Directory.GetCurrentDirectory())
+        //                          .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+        //IConfigurationRoot configuration = builder.Build();
+        //optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+        optionsBuilder.UseSqlServer("Server=localhost,1433;Database=" +
+            "FA24_SE1702_PRN221_G2_KoiPondConstruct" +
+            ";User Id=SA;Password=yourStrong(!)Password;TrustServerCertificate=True;");
+    }
     public virtual DbSet<TblCustomerRequest> TblCustomerRequests { get; set; }
 
     public virtual DbSet<TblCustomerRequestDetail> TblCustomerRequestDetails { get; set; }
@@ -71,7 +67,7 @@ public partial class FA24_SE1702_PRN221_G2_KoiPondConstructContext : DbContext
             entity.ToTable("tbl_customer_request");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.CreatedTime)
                 .HasColumnType("datetime")
@@ -111,7 +107,7 @@ public partial class FA24_SE1702_PRN221_G2_KoiPondConstructContext : DbContext
             entity.ToTable("tbl_customer_request_detail");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.Address)
                 .IsRequired()
@@ -175,7 +171,7 @@ public partial class FA24_SE1702_PRN221_G2_KoiPondConstructContext : DbContext
             entity.HasIndex(e => e.RequestDetailId, "UQ__tbl_desi__5A4D1BEA8FACACD6").IsUnique();
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.ApprovedBy)
                 .IsRequired()
@@ -230,7 +226,7 @@ public partial class FA24_SE1702_PRN221_G2_KoiPondConstructContext : DbContext
             entity.ToTable("tbl_feedback");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.AttachedFile)
                 .IsRequired()
@@ -275,7 +271,7 @@ public partial class FA24_SE1702_PRN221_G2_KoiPondConstructContext : DbContext
             entity.ToTable("tbl_img_refer");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.CreatedTime)
                 .HasColumnType("datetime")
@@ -299,7 +295,7 @@ public partial class FA24_SE1702_PRN221_G2_KoiPondConstructContext : DbContext
             entity.HasIndex(e => e.DesignId, "UQ__tbl_insp__1BA5C3FAA0ACCC8F").IsUnique();
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.DesignId).HasColumnName("design_id");
             entity.Property(e => e.Findings)
@@ -341,7 +337,7 @@ public partial class FA24_SE1702_PRN221_G2_KoiPondConstructContext : DbContext
             entity.ToTable("tbl_inspection_detail");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.Attribute)
                 .IsRequired()
@@ -386,7 +382,7 @@ public partial class FA24_SE1702_PRN221_G2_KoiPondConstructContext : DbContext
             entity.ToTable("tbl_price_contract_cost");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.Count).HasColumnName("count");
             entity.Property(e => e.IsDeleted).HasColumnName("is_deleted");
@@ -412,7 +408,7 @@ public partial class FA24_SE1702_PRN221_G2_KoiPondConstructContext : DbContext
             entity.ToTable("tbl_price_refer");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.CreatedBy)
                 .IsRequired()
@@ -468,7 +464,7 @@ public partial class FA24_SE1702_PRN221_G2_KoiPondConstructContext : DbContext
             entity.HasIndex(e => e.RequestDetailId, "UQ__tbl_quot__5A4D1BEA97EC8145").IsUnique();
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.ApprovedBy)
                 .IsRequired()
@@ -524,7 +520,7 @@ public partial class FA24_SE1702_PRN221_G2_KoiPondConstructContext : DbContext
             entity.ToTable("tbl_sample_design");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.ApprovedBy)
                 .IsRequired()
@@ -574,7 +570,7 @@ public partial class FA24_SE1702_PRN221_G2_KoiPondConstructContext : DbContext
             entity.ToTable("tbl_sample_design_img_refer");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.ImgReferId).HasColumnName("img_refer_id");
             entity.Property(e => e.IsDeleted).HasColumnName("is_deleted");
@@ -598,7 +594,7 @@ public partial class FA24_SE1702_PRN221_G2_KoiPondConstructContext : DbContext
             entity.ToTable("tbl_status");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.CreatedTime)
                 .HasColumnType("datetime")
@@ -644,7 +640,7 @@ public partial class FA24_SE1702_PRN221_G2_KoiPondConstructContext : DbContext
             entity.HasIndex(e => e.SampleDesignId, "UQ__tbl_sugg__C675143A6D2B672D").IsUnique();
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.ApprovedBy)
                 .IsRequired()
@@ -705,14 +701,10 @@ public partial class FA24_SE1702_PRN221_G2_KoiPondConstructContext : DbContext
 
             entity.ToTable("tbl_user");
 
-            entity.HasIndex(e => e.Email, "tbl_user_email_unique").IsUnique();
-
-            entity.HasIndex(e => e.PhoneNumber, "tbl_user_phone_number_unique").IsUnique();
-
             entity.HasIndex(e => e.Username, "tbl_user_username_unique").IsUnique();
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.Address)
                 .IsRequired()

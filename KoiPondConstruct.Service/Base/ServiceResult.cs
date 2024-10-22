@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace KoiPondConstruction.Service.Base
 {
-    //TODO: Follow the ServiceResult patternx   
     public interface IServiceResult
     {
         int Status { get; set; }

@@ -1,0 +1,78 @@
+﻿@page
+@model KoiPondConstruct.RazorApp.Pages.CusReqDetails.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<!-- Add filter controls -->
+<div>
+    <form method="get">
+        <input type="text" name="search" placeholder="Search..." />
+        <select name="sortOrder">
+            <option value="">Sort by...</option>
+            <option value="firstName">First Name</option>
+            <option value="lastName">Last Name</option>
+            <option value="dateOfBirth">Date of Birth</option>
+            <option value="budget">Budget</option>
+            <!-- Add other sorting options as needed -->
+        </select>
+        <button type="submit">Apply</button>
+    </form>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.GetCustRequestDetailListDTOResponses[0].HomeownerFirstName)</th>
+            <th>@Html.DisplayNameFor(model => model.GetCustRequestDetailListDTOResponses[0].HomeownerLastName)</th>
+            <th>@Html.DisplayNameFor(model => model.GetCustRequestDetailListDTOResponses[0].HomeownerPhone)</th>
+            <th>@Html.DisplayNameFor(model => model.GetCustRequestDetailListDTOResponses[0].HomeownerDateOfBirth)</th>
+            <th>@Html.DisplayNameFor(model => model.GetCustRequestDetailListDTOResponses[0].Height)</th>
+            <th>@Html.DisplayNameFor(model => model.GetCustRequestDetailListDTOResponses[0].Width)</th>
+            <th>@Html.DisplayNameFor(model => model.GetCustRequestDetailListDTOResponses[0].Length)</th>
+            <th>@Html.DisplayNameFor(model => model.GetCustRequestDetailListDTOResponses[0].Shape)</th>
+            <th>@Html.DisplayNameFor(model => model.GetCustRequestDetailListDTOResponses[0].Budget)</th>
+            <th>@Html.DisplayNameFor(model => model.GetCustRequestDetailListDTOResponses[0].Type)</th>
+            <th>@Html.DisplayNameFor(model => model.GetCustRequestDetailListDTOResponses[0].Address)</th>
+            <th>@Html.DisplayNameFor(model => model.GetCustRequestDetailListDTOResponses[0].Note)</th>
+            <th>@Html.DisplayNameFor(model => model.GetCustRequestDetailListDTOResponses[0].IsDeleted)</th>
+            <th>@Html.DisplayNameFor(model => model.GetCustRequestDetailListDTOResponses[0].RequestId)</th>
+            <th>@Html.DisplayNameFor(model => model.GetCustRequestDetailListDTOResponses[0].SampleDesignId)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.GetCustRequestDetailListDTOResponses)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.HomeownerFirstName)</td>
+                <td>@Html.DisplayFor(modelItem => item.HomeownerLastName)</td>
+                <td>@Html.DisplayFor(modelItem => item.HomeownerPhone)</td>
+                <td>@Html.DisplayFor(modelItem => item.HomeownerDateOfBirth)</td>
+                <td>@Html.DisplayFor(modelItem => item.Height)</td>
+                <td>@Html.DisplayFor(modelItem => item.Width)</td>
+                <td>@Html.DisplayFor(modelItem => item.Length)</td>
+                <td>@Html.DisplayFor(modelItem => item.Shape)</td>
+                <td>@Html.DisplayFor(modelItem => item.Budget)</td>
+                <td>@Html.DisplayFor(modelItem => item.Type)</td>
+                <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                <td>@Html.DisplayFor(modelItem => item.Note)</td>
+                <td>@Html.DisplayFor(modelItem => item.IsDeleted)</td>
+                <td>@Html.DisplayFor(modelItem => item.RequestId)</td>
+                <td>@Html.DisplayFor(modelItem => item.SampleDesignId)</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

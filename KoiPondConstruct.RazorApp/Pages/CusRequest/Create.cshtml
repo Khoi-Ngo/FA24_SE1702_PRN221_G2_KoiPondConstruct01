@@ -1,0 +1,157 @@
+﻿@page
+@model KoiPondConstruct.RazorApp.Pages.CusRequest.CreateModel
+
+@{
+    ViewData["Title"] = "Create Customer Request";
+}
+
+<h1>Create Customer Request</h1>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <!-- Main Customer Request Detail Fields -->
+    <input asp-for="CustomerRequestDetailDTO.Id" type="hidden" />
+
+    <div class="form-group">
+        <label asp-for="CustomerRequestDetailDTO.Description" class="control-label"></label>
+        <input asp-for="CustomerRequestDetailDTO.Description" class="form-control" />
+        <span asp-validation-for="CustomerRequestDetailDTO.Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CustomerRequestDetailDTO.Priority" class="control-label"></label>
+        <input asp-for="CustomerRequestDetailDTO.Priority" class="form-control" />
+        <span asp-validation-for="CustomerRequestDetailDTO.Priority" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CustomerRequestDetailDTO.Address" class="control-label"></label>
+        <input asp-for="CustomerRequestDetailDTO.Address" class="form-control" />
+        <span asp-validation-for="CustomerRequestDetailDTO.Address" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="CustomerRequestDetailDTO.StartDate" class="control-label"></label>
+        <input asp-for="CustomerRequestDetailDTO.StartDate" type="date" class="form-control" />
+        <span asp-validation-for="CustomerRequestDetailDTO.StartDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CustomerRequestDetailDTO.EndDate" class="control-label"></label>
+        <input asp-for="CustomerRequestDetailDTO.EndDate" type="date" class="form-control" />
+        <span asp-validation-for="CustomerRequestDetailDTO.EndDate" class="text-danger"></span>
+    </div>
+
+
+    <input asp-for="CustomerRequestDetailDTO.IsDeleted" type="hidden" />
+
+    <!-- Dynamic Customer Request Detail List -->
+    <h3>Customer Request Details</h3>
+    <div id="request-details-container">
+        <!-- Dynamic forms will be injected here -->
+    </div>
+    <button type="button" id="add-detail-btn" class="btn btn-secondary">Add Request Detail</button>
+
+    <!-- Submit Button -->
+    <div class="form-group mt-3">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        let detailIndex = 0;
+
+        // Function to add a new detail form
+        function addRequestDetail() {
+            detailIndex++;
+            const container = document.getElementById("request-details-container");
+            const detailHtml = `
+                        <div class="detail-form" data-index="${detailIndex}">
+                            <h4>Detail #${detailIndex}</h4>
+                            <input type="hidden" name="CustomerRequestDetailListDTOs[${detailIndex}].Id" />
+                            <input type="hidden" name="CustomerRequestDetailListDTOs[${detailIndex}].RequestId" />
+
+                            <div class="form-group">
+                                <label for="CustomerRequestDetailListDTOs_${detailIndex}__HomeownerFirstName">First Name</label>
+                                <input name="CustomerRequestDetailListDTOs[${detailIndex}].HomeownerFirstName" class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="CustomerRequestDetailListDTOs_${detailIndex}__HomeownerLastName">Last Name</label>
+                                <input name="CustomerRequestDetailListDTOs[${detailIndex}].HomeownerLastName" class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="CustomerRequestDetailListDTOs_${detailIndex}__HomeownerPhone">Phone</label>
+                                <input name="CustomerRequestDetailListDTOs[${detailIndex}].HomeownerPhone" class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="CustomerRequestDetailListDTOs_${detailIndex}__HomeownerDateOfBirth">Date of Birth</label>
+                                <input name="CustomerRequestDetailListDTOs[${detailIndex}].HomeownerDateOfBirth" type="date" class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="CustomerRequestDetailListDTOs_${detailIndex}__Height">Height</label>
+                                <input name="CustomerRequestDetailListDTOs[${detailIndex}].Height" class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="CustomerRequestDetailListDTOs_${detailIndex}__Width">Width</label>
+                                <input name="CustomerRequestDetailListDTOs[${detailIndex}].Width" class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="CustomerRequestDetailListDTOs_${detailIndex}__Length">Length</label>
+                                <input name="CustomerRequestDetailListDTOs[${detailIndex}].Length" class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="CustomerRequestDetailListDTOs_${detailIndex}__Shape">Shape</label>
+                                <input name="CustomerRequestDetailListDTOs[${detailIndex}].Shape" class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="CustomerRequestDetailListDTOs_${detailIndex}__Budget">Budget</label>
+                                <input name="CustomerRequestDetailListDTOs[${detailIndex}].Budget" class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="CustomerRequestDetailListDTOs_${detailIndex}__Type">Type</label>
+                                <input name="CustomerRequestDetailListDTOs[${detailIndex}].Type" class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="CustomerRequestDetailListDTOs_${detailIndex}__Address">Address</label>
+                                <input name="CustomerRequestDetailListDTOs[${detailIndex}].Address" class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="CustomerRequestDetailListDTOs_${detailIndex}__Note">Note</label>
+                                <textarea name="CustomerRequestDetailListDTOs[${detailIndex}].Note" class="form-control"></textarea>
+                            </div>
+
+                            <input type="hidden" name="CustomerRequestDetailListDTOs[${detailIndex}].IsDeleted" value="false" />
+
+                            <button type="button" class="btn btn-danger" onclick="removeRequestDetail(${detailIndex})">Remove</button>
+                        </div>
+                    `;
+            container.insertAdjacentHTML('beforeend', detailHtml);
+        }
+
+        // Function to remove a detail form
+        function removeRequestDetail(index) {
+            const form = document.querySelector(`.detail-form[data-index="${index}"]`);
+            form.remove();
+        }
+
+        // Handle the button click to add a new detail form
+        document.getElementById("add-detail-btn").addEventListener("click", addRequestDetail);
+    </script>
+}

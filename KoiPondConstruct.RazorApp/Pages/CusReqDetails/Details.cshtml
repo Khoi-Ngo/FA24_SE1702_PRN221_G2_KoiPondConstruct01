@@ -1,0 +1,104 @@
+﻿@page
+@model KoiPondConstruct.RazorApp.Pages.CusReqDetails.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TblCustomerRequestDetail</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblCustomerRequestDetail.HomeownerFirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblCustomerRequestDetail.HomeownerFirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblCustomerRequestDetail.HomeownerLastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblCustomerRequestDetail.HomeownerLastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblCustomerRequestDetail.HomeownerPhone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblCustomerRequestDetail.HomeownerPhone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblCustomerRequestDetail.HomeownerDateOfBirth)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblCustomerRequestDetail.HomeownerDateOfBirth)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblCustomerRequestDetail.Height)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblCustomerRequestDetail.Height)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblCustomerRequestDetail.Width)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblCustomerRequestDetail.Width)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblCustomerRequestDetail.Length)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblCustomerRequestDetail.Length)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblCustomerRequestDetail.Shape)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblCustomerRequestDetail.Shape)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblCustomerRequestDetail.Budget)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblCustomerRequestDetail.Budget)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblCustomerRequestDetail.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblCustomerRequestDetail.Type)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblCustomerRequestDetail.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblCustomerRequestDetail.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblCustomerRequestDetail.Note)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblCustomerRequestDetail.Note)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblCustomerRequestDetail.IsDeleted)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblCustomerRequestDetail.IsDeleted)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblCustomerRequestDetail.Request)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblCustomerRequestDetail.Request.Description)
+        </dd>
+   
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.TblCustomerRequestDetail.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

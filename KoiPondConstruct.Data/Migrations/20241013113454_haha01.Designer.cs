@@ -4,6 +4,7 @@ using KoiPondConstruct.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KoiPondConstruct.Data.Migrations
 {
     [DbContext(typeof(FA24_SE1702_PRN221_G2_KoiPondConstructContext))]
-    partial class FA24_SE1702_PRN221_G2_KoiPondConstructContextModelSnapshot : ModelSnapshot
+    [Migration("20241013113454_haha01")]
+    partial class haha01
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1019,6 +1022,12 @@ namespace KoiPondConstruct.Data.Migrations
 
                     b.HasKey("Id")
                         .HasName("tbl_user_id_primary");
+
+                    b.HasIndex(new[] { "Email" }, "tbl_user_email_unique")
+                        .IsUnique();
+
+                    b.HasIndex(new[] { "PhoneNumber" }, "tbl_user_phone_number_unique")
+                        .IsUnique();
 
                     b.HasIndex(new[] { "Username" }, "tbl_user_username_unique")
                         .IsUnique();

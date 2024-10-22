@@ -17,5 +17,9 @@ namespace KoiPondConstruct.Data.Repository.Impl
         {
             _context = context;
         }
+        public async Task<TblUser> GetUserByUsernameAndPasswordAsync(string username, string password)
+        {
+            return await _context.TblUsers.FirstOrDefaultAsync(user => user.Username == username && user.Password == password);
+        }
     }
 }

@@ -1,0 +1,161 @@
+﻿@page
+@model KoiPondConstruct.RazorApp.Pages.CusRequest.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Customer Request Details</h1>
+
+<div>
+    <h4>Customer Request Information</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.CustomerFirstName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.customerRequestDetailDTO.CustomerFirstName)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.CustomerLastName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.customerRequestDetailDTO.CustomerLastName)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.CustomerUserName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.customerRequestDetailDTO.CustomerUserName)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.Email)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.customerRequestDetailDTO.Email)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.PhoneNumber)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.customerRequestDetailDTO.PhoneNumber)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.Description)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.customerRequestDetailDTO.Description)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.Priority)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.customerRequestDetailDTO.Priority)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.Address)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.customerRequestDetailDTO.Address)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.CreatedTime)
+        </dt>
+        <dd class="col-sm-9">
+            @Model.customerRequestDetailDTO.CreatedTime
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.StartDate)
+        </dt>
+        <dd class="col-sm-9">
+            @Model.customerRequestDetailDTO.StartDate
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.EndDate)
+        </dt>
+        <dd class="col-sm-9">
+            @Model.customerRequestDetailDTO.EndDate
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.Status)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.customerRequestDetailDTO.Status)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.customerRequestDetailDTO.IsDeleted)
+        </dt>
+        <dd class="col-sm-9">
+            @(Model.customerRequestDetailDTO.IsDeleted ? "Yes" : "No")
+        </dd>
+    </dl>
+</div>
+
+<h4>Customer Request Designs</h4>
+<hr />
+@if (Model.customerRequestDetailDTO.customerRequestDetailListDTOs != null && Model.customerRequestDetailDTO.customerRequestDetailListDTOs.Any())
+{
+    <p>
+        <a asp-page="../CusReqDetails/Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Homeowner Name</th>
+                <th>Phone</th>
+                <th>Date of Birth</th>
+                <th>Dimensions (H x W x L)</th>
+                <th>Shape</th>
+                <th>Budget</th>
+                <th>Type</th>
+                <th>Address</th>
+                <th>Note</th>
+                <th>Is Deleted</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var detail in Model.customerRequestDetailDTO.customerRequestDetailListDTOs)
+            {
+                <tr>
+                    <td>@detail.HomeownerFirstName @detail.HomeownerLastName</td>
+                    <td>@detail.HomeownerPhone</td>
+                    <td>@detail.HomeownerDateOfBirth</td>
+                    <td>@detail.Height x @detail.Width x @detail.Length</td>
+                    <td>@detail.Shape</td>
+                    <td>@detail.Budget</td>
+                    <td>@detail.Type</td>
+                    <td>@detail.Address</td>
+                    <td>@detail.Note</td>
+                    <td>@(detail.IsDeleted ? "Yes" : "No")</td>
+                    <td>
+                        <a asp-page="../CusReqDetails/Edit" asp-route-id="@detail.Id">Edit</a> |
+                        <a asp-page="../CusReqDetails/Details" asp-route-id="@detail.Id">Details</a> |
+                        <a asp-page="../CusReqDetails/Delete" asp-route-id="@detail.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No design details available.</p>
+}
+
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.customerRequestDetailDTO.Id" class="btn btn-primary">Edit</a> |
+    <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+</div>
