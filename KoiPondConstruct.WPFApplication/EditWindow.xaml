@@ -1,0 +1,69 @@
+﻿<Window
+    x:Class="KoiPondConstruct.WPFApplication.EditWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Edit Window"
+    Width="800"
+    Height="710"
+    mc:Ignorable="d">
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock FontWeight="Bold" Text="ID" />
+            <TextBlock x:Name="IdTextBlock" Margin="0,0,0,10" />
+
+            <TextBlock Text="Homeowner First Name" />
+            <TextBox x:Name="HomeownerFirstNameTextBox" Margin="0,0,0,10" />
+
+            <TextBlock Text="Homeowner Last Name" />
+            <TextBox x:Name="HomeownerLastNameTextBox" Margin="0,0,0,10" />
+
+            <TextBlock Text="Homeowner Phone" />
+            <TextBox x:Name="HomeownerPhoneTextBox" Margin="0,0,0,10" />
+
+            <TextBlock Text="Date of Birth" />
+            <DatePicker x:Name="HomeownerDateOfBirthPicker" Margin="0,0,0,10" />
+
+            <TextBlock Text="Height" />
+            <TextBox x:Name="HeightTextBox" Margin="0,0,0,10" />
+
+            <TextBlock Text="Width" />
+            <TextBox x:Name="WidthTextBox" Margin="0,0,0,10" />
+
+            <TextBlock Text="Length" />
+            <TextBox x:Name="LengthTextBox" Margin="0,0,0,10" />
+
+            <TextBlock Text="Shape" />
+            <TextBox x:Name="ShapeTextBox" Margin="0,0,0,10" />
+
+            <TextBlock Text="Budget" />
+            <TextBox x:Name="BudgetTextBox" Margin="0,0,0,10" />
+
+            <TextBlock Text="Address" />
+            <TextBox x:Name="AddressTextBox" Margin="0,0,0,10" />
+
+            <TextBlock Text="Note" />
+            <TextBox
+                x:Name="NoteTextBox"
+                Height="100"
+                Margin="0,0,0,10"
+                AcceptsReturn="True" />
+
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button
+                    Margin="5"
+                    Click="SaveChanges_Click"
+                    Content="Save Changes" />
+                <Button
+                    Margin="5"
+                    Click="ResetFields_Click"
+                    Content="Reset" />
+                <Button
+                    Margin="5"
+                    Click="CancelWindow_Click"
+                    Content="Cancel" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

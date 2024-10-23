@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KoiPondConstruct.Data", "Ko
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KoiPondConstruct.Service", "KoiPondConstruct.Service\KoiPondConstruct.Service.csproj", "{BE471BC4-7CD6-4150-80CE-19DD533F5281}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KoiPondConstruct.WPFApplication", "KoiPondConstruct.WPFApplication\KoiPondConstruct.WPFApplication.csproj", "{B64223EC-F63A-470B-90CD-7740ACBFADF9}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KoiPondConstruct.RazorApp", "KoiPondConstruct.RazorApp\KoiPondConstruct.RazorApp.csproj", "{7328ED3A-B5CB-4405-AAAC-2F72913D2147}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoiPondConstruct.WPFApplication", "KoiPondConstruct.WPFApplication\KoiPondConstruct.WPFApplication.csproj", "{724AB265-2165-48B7-A6BE-3E59D3D55CB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,14 @@ Global
 		{BE471BC4-7CD6-4150-80CE-19DD533F5281}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE471BC4-7CD6-4150-80CE-19DD533F5281}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE471BC4-7CD6-4150-80CE-19DD533F5281}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B64223EC-F63A-470B-90CD-7740ACBFADF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B64223EC-F63A-470B-90CD-7740ACBFADF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B64223EC-F63A-470B-90CD-7740ACBFADF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B64223EC-F63A-470B-90CD-7740ACBFADF9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7328ED3A-B5CB-4405-AAAC-2F72913D2147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7328ED3A-B5CB-4405-AAAC-2F72913D2147}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7328ED3A-B5CB-4405-AAAC-2F72913D2147}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7328ED3A-B5CB-4405-AAAC-2F72913D2147}.Release|Any CPU.Build.0 = Release|Any CPU
+		{724AB265-2165-48B7-A6BE-3E59D3D55CB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{724AB265-2165-48B7-A6BE-3E59D3D55CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{724AB265-2165-48B7-A6BE-3E59D3D55CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{724AB265-2165-48B7-A6BE-3E59D3D55CB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
