@@ -1,0 +1,87 @@
+﻿@page
+@model KoiPondConstruction.RazorWebApp.Pages.Desgin.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+
+
+}
+
+<h1>Create</h1>
+
+<h4>TblDesign</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+      
+            <div class="form-group">
+                <label asp-for="TblDesign.RequestDetailId" class="control-label"></label>
+                <select asp-for="TblDesign.RequestDetailId" class="form-control" asp-items="ViewBag.RequestDetailId"></select>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="TblDesign.CreatedTime" class="control-label"></label>
+                <input asp-for="TblDesign.CreatedTime" class="form-control" />
+                <span asp-validation-for="TblDesign.CreatedTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblDesign.UpdatedTime" class="control-label"></label>
+                <input asp-for="TblDesign.UpdatedTime" class="form-control" />
+                <span asp-validation-for="TblDesign.UpdatedTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblDesign.CreatedBy" class="control-label"></label>
+                <input asp-for="TblDesign.CreatedBy" class="form-control" />
+                <span asp-validation-for="TblDesign.CreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblDesign.File" class="control-label"></label>
+                <input asp-for="TblDesign.File" class="form-control" />
+                <span asp-validation-for="TblDesign.File" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblDesign.Status" class="control-label"></label>
+                <input asp-for="TblDesign.Status" class="form-control" />
+                <span asp-validation-for="TblDesign.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblDesign.Note" class="control-label"></label>
+                <input asp-for="TblDesign.Note" class="form-control" />
+                <span asp-validation-for="TblDesign.Note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblDesign.ApprovedBy" class="control-label"></label>
+                <input asp-for="TblDesign.ApprovedBy" class="form-control" />
+                <span asp-validation-for="TblDesign.ApprovedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblDesign.ApprovedTime" class="control-label"></label>
+                <input asp-for="TblDesign.ApprovedTime" class="form-control" />
+                <span asp-validation-for="TblDesign.ApprovedTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblDesign.ContentText" class="control-label"></label>
+                <input asp-for="TblDesign.ContentText" class="form-control" />
+                <span asp-validation-for="TblDesign.ContentText" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TblDesign.IsDeleted" /> @Html.DisplayNameFor(model => model.TblDesign.IsDeleted)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
