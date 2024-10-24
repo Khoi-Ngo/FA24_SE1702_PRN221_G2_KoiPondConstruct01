@@ -6,63 +6,108 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Edit Window"
     Width="800"
-    Height="710"
+    Height="989"
+    Background="#F7F7F7"
     mc:Ignorable="d">
-    <Grid>
-        <StackPanel Margin="20">
-            <TextBlock FontWeight="Bold" Text="ID" />
-            <TextBlock x:Name="IdTextBlock" Margin="0,0,0,10" />
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock
+                Margin="0,0,0,20"
+                FontSize="20"
+                FontWeight="Bold"
+                Foreground="#333"
+                Text="Edit Homeowner Details" />
 
-            <TextBlock Text="Homeowner First Name" />
-            <TextBox x:Name="HomeownerFirstNameTextBox" Margin="0,0,0,10" />
+            <!--  GroupBox to group fields  -->
+            <GroupBox Padding="10" Header="Homeowner Info">
+                <StackPanel>
+                    <TextBlock FontWeight="Bold" Text="ID" />
+                    <TextBlock x:Name="IdTextBlock" Margin="0,0,0,10" />
 
-            <TextBlock Text="Homeowner Last Name" />
-            <TextBox x:Name="HomeownerLastNameTextBox" Margin="0,0,0,10" />
+                    <TextBlock Text="First Name" />
+                    <TextBox x:Name="HomeownerFirstNameTextBox" Margin="0,0,0,10" />
 
-            <TextBlock Text="Homeowner Phone" />
-            <TextBox x:Name="HomeownerPhoneTextBox" Margin="0,0,0,10" />
+                    <TextBlock Text="Last Name" />
+                    <TextBox x:Name="HomeownerLastNameTextBox" Margin="0,0,0,10" />
 
-            <TextBlock Text="Date of Birth" />
-            <DatePicker x:Name="HomeownerDateOfBirthPicker" Margin="0,0,0,10" />
+                    <TextBlock Text="Phone" />
+                    <TextBox x:Name="HomeownerPhoneTextBox" Margin="0,0,0,10" />
 
-            <TextBlock Text="Height" />
-            <TextBox x:Name="HeightTextBox" Margin="0,0,0,10" />
+                    <TextBlock Text="Date of Birth" />
+                    <DatePicker x:Name="HomeownerDateOfBirthPicker" Margin="0,0,0,10" />
+                </StackPanel>
+            </GroupBox>
 
-            <TextBlock Text="Width" />
-            <TextBox x:Name="WidthTextBox" Margin="0,0,0,10" />
+            <!--  GroupBox for property info  -->
+            <GroupBox
+                Margin="10,20,0,0"
+                Padding="10"
+                Header="Pond Specifications">
+                <StackPanel>
+                    <TextBlock Text="Height" />
+                    <TextBox x:Name="HeightTextBox" Margin="0,0,0,10" />
 
-            <TextBlock Text="Length" />
-            <TextBox x:Name="LengthTextBox" Margin="0,0,0,10" />
+                    <TextBlock Text="Width" />
+                    <TextBox x:Name="WidthTextBox" Margin="0,0,0,10" />
 
-            <TextBlock Text="Shape" />
-            <TextBox x:Name="ShapeTextBox" Margin="0,0,0,10" />
+                    <TextBlock Text="Length" />
+                    <TextBox x:Name="LengthTextBox" Margin="0,0,0,10" />
 
-            <TextBlock Text="Budget" />
-            <TextBox x:Name="BudgetTextBox" Margin="0,0,0,10" />
+                    <TextBlock Text="Shape" />
+                    <TextBox x:Name="ShapeTextBox" Margin="0,0,0,10" />
 
-            <TextBlock Text="Address" />
-            <TextBox x:Name="AddressTextBox" Margin="0,0,0,10" />
+                    <TextBlock Text="Budget" />
+                    <TextBox x:Name="BudgetTextBox" Margin="0,0,0,10" />
+                </StackPanel>
+            </GroupBox>
 
-            <TextBlock Text="Note" />
-            <TextBox
-                x:Name="NoteTextBox"
-                Height="100"
-                Margin="0,0,0,10"
-                AcceptsReturn="True" />
+            <!--  GroupBox for address and notes  -->
+            <GroupBox
+                Margin="10,20,0,0"
+                Padding="10"
+                Header="Other Details">
+                <StackPanel>
+                    <TextBlock Text="Address" />
+                    <TextBox x:Name="AddressTextBox" Margin="0,0,0,10" />
 
-            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <TextBlock Text="Note" />
+                    <TextBox
+                        x:Name="NoteTextBox"
+                        Height="100"
+                        Margin="0,0,0,10"
+                        AcceptsReturn="True" />
+                </StackPanel>
+            </GroupBox>
+
+            <!--  Buttons aligned to the right  -->
+            <StackPanel
+                Margin="0,20,0,0"
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
                 <Button
+                    Width="100"
                     Margin="5"
+                    Padding="10,5"
+                    Background="#4CAF50"
                     Click="SaveChanges_Click"
-                    Content="Save Changes" />
+                    Content="Save Changes"
+                    Foreground="White" />
                 <Button
+                    Width="100"
                     Margin="5"
+                    Padding="10,5"
+                    Background="#FFC107"
                     Click="ResetFields_Click"
-                    Content="Reset" />
+                    Content="Reset"
+                    Foreground="White" />
                 <Button
+                    Width="100"
                     Margin="5"
+                    Padding="10,5"
+                    Background="#F44336"
                     Click="CancelWindow_Click"
-                    Content="Cancel" />
+                    Content="Cancel"
+                    Foreground="White" />
             </StackPanel>
         </StackPanel>
     </Grid>

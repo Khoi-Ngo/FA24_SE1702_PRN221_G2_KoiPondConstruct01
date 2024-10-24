@@ -1,6 +1,7 @@
 ﻿using KoiPondConstruct.Service;
 using KoiPondConstruct.Service.DTOs;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,6 +14,7 @@ namespace KoiPondConstruct.WPFApplication
 
         #region init + load data
         private readonly ICustomerRequestService _customerRequestService;
+        private IList<GetCustRequestDetailListDTOResponse> _customerRequestData;
 
         public MainWindow(ICustomerRequestService customerRequestService)
         {
@@ -23,10 +25,53 @@ namespace KoiPondConstruct.WPFApplication
 
         private async void LoadData()
         {
-            var allRequestDetails = (await _customerRequestService.GetAllCustomerRequestDetailsAsync()).Data as IList<GetCustRequestDetailListDTOResponse>;
-
-            CustomerRequestDataGrid.ItemsSource = allRequestDetails;
+            _customerRequestData = (await _customerRequestService.GetAllCustomerRequestDetailsAsync()).Data as IList<GetCustRequestDetailListDTOResponse>;
+            CustomerRequestDataGrid.ItemsSource = _customerRequestData;
         }
+        #endregion
+
+        #region Sorting
+        private void CustomerRequestDataGrid_Sorting(object sender, DataGridSortingEventArgs e)
+        {
+            var column = e.Column;
+            var direction = (column.SortDirection != ListSortDirection.Ascending) ? ListSortDirection.Ascending : ListSortDirection.Descending;
+            var sortedData = _customerRequestData.OrderBy(c => c.GetType().GetProperty(column.SortMemberPath).GetValue(c)).ToList();
+            if (direction == ListSortDirection.Descending)
+            {
+                sortedData.Reverse();
+            }
+            CustomerRequestDataGrid.ItemsSource = sortedData;
+            column.SortDirection = direction;
+        }
+        #endregion
+
+        #region Search Methods
+        private void FirstNameSearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FilterData();
+        }
+
+        private void LastNameSearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FilterData();
+        }
+
+        private void PhoneSearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            FilterData();
+        }
+
+        private void FilterData()
+        {
+            var filteredData = _customerRequestData.Where(c =>
+                (string.IsNullOrEmpty(FirstNameSearchBox.Text) || c.HomeownerFirstName.Contains(FirstNameSearchBox.Text, StringComparison.OrdinalIgnoreCase)) &&
+                (string.IsNullOrEmpty(LastNameSearchBox.Text) || c.HomeownerLastName.Contains(LastNameSearchBox.Text, StringComparison.OrdinalIgnoreCase)) &&
+                (string.IsNullOrEmpty(PhoneSearchBox.Text) || c.HomeownerPhone.Contains(PhoneSearchBox.Text, StringComparison.OrdinalIgnoreCase))
+            ).ToList();
+
+            CustomerRequestDataGrid.ItemsSource = filteredData;
+        }
+
         #endregion
 
 
@@ -39,10 +84,6 @@ namespace KoiPondConstruct.WPFApplication
             editWindow.ShowDialog();
         }
         #endregion
-
-
-
-
 
         #region handle delete
         private async void Delete_Click(object sender, RoutedEventArgs e)
@@ -79,20 +120,17 @@ namespace KoiPondConstruct.WPFApplication
 
         #endregion
 
-        #region handle view create
+        #region handle view detail
         private void ViewDetail_Click(object sender, RoutedEventArgs e)
         {
-            // Get the selected request
             var selectedRequest = (GetCustRequestDetailListDTOResponse)((Button)sender).DataContext;
-
-            // Create the detail window and pass the request ID
             var detailWindow = new DetailWindow(_customerRequestService, selectedRequest.Id);
-
-            // Show the detail window as a modal dialog
             detailWindow.ShowDialog();
         }
 
         #endregion
+
+
 
     }
 }

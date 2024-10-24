@@ -6,7 +6,6 @@
     Width="1200"
     Height="700"
     Background="#f4f4f4">
-
     <Grid>
         <!--  Main Layout  -->
         <StackPanel
@@ -21,7 +20,6 @@
                 FontWeight="Bold"
                 Foreground="#2e7d32"
                 Text="ALL CUSTOMER REQUEST DETAILS" />
-
             <!--  Create New Button  -->
             <StackPanel
                 Margin="0,0,0,20"
@@ -39,7 +37,36 @@
                     FontWeight="Bold"
                     Foreground="White" />
             </StackPanel>
-
+            <!--  Search Fields  -->
+            <StackPanel
+                Margin="0,0,0,10"
+                HorizontalAlignment="Center"
+                Orientation="Horizontal">
+                <TextBlock
+                    Margin="10,0,5,0"
+                    VerticalAlignment="Center"
+                    Text="Search First Name:" />
+                <TextBox
+                    x:Name="FirstNameSearchBox"
+                    Width="150"
+                    TextChanged="FirstNameSearchBox_TextChanged" />
+                <TextBlock
+                    Margin="20,0,5,0"
+                    VerticalAlignment="Center"
+                    Text="Search Last Name:" />
+                <TextBox
+                    x:Name="LastNameSearchBox"
+                    Width="150"
+                    TextChanged="LastNameSearchBox_TextChanged" />
+                <TextBlock
+                    Margin="20,0,5,0"
+                    VerticalAlignment="Center"
+                    Text="Search Phone:" />
+                <TextBox
+                    x:Name="PhoneSearchBox"
+                    Width="150"
+                    TextChanged="PhoneSearchBox_TextChanged" />
+            </StackPanel>
             <!--  DataGrid for displaying customer requests  -->
             <DataGrid
                 x:Name="CustomerRequestDataGrid"
@@ -56,9 +83,7 @@
                 HeadersVisibility="Column"
                 IsReadOnly="True"
                 RowBackground="#eeeeee">
-
                 <!--  Define Columns  -->
-
                 <DataGrid.Columns>
                     <DataGridTextColumn
                         Width="*"
@@ -67,15 +92,18 @@
                     <DataGridTextColumn
                         Width="*"
                         Binding="{Binding HomeownerFirstName}"
-                        Header="First Name" />
+                        Header="First Name"
+                        SortMemberPath="HomeownerFirstName" />
                     <DataGridTextColumn
                         Width="*"
                         Binding="{Binding HomeownerLastName}"
-                        Header="Last Name" />
+                        Header="Last Name"
+                        SortMemberPath="HomeownerLastName" />
                     <DataGridTextColumn
                         Width="*"
                         Binding="{Binding HomeownerPhone}"
-                        Header="Phone" />
+                        Header="Phone"
+                        SortMemberPath="HomeownerPhone" />
                     <DataGridTextColumn
                         Width="*"
                         Binding="{Binding HomeownerDateOfBirth, StringFormat={}{0:MM/dd/yyyy}}"
@@ -124,7 +152,6 @@
                         Width="*"
                         Binding="{Binding SampleDesignId}"
                         Header="Sample Design ID" />
-
                     <!--  Action Column  -->
                     <DataGridTemplateColumn Width="250" Header="Actions">
                         <DataGridTemplateColumn.CellTemplate>
@@ -140,7 +167,6 @@
                                         Click="ViewDetail_Click"
                                         Content="View Detail"
                                         Foreground="White" />
-
                                     <!--  Update Button  -->
                                     <Button
                                         Width="80"
@@ -151,7 +177,6 @@
                                         Click="Update_Click"
                                         Content="Update"
                                         Foreground="White" />
-
                                     <!--  Delete Button  -->
                                     <Button
                                         Width="80"
