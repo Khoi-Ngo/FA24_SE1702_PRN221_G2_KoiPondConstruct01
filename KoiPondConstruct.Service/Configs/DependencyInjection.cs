@@ -31,7 +31,6 @@ namespace KoiPondConstruct.Service.Configs
             services.AddScoped<AuthService>();
             services.AddScoped<CustomerRequestService>();
             services.AddScoped<DataInitService>();
-            services.AddScoped<KoiPondConstructionService>();
             services.AddDistributedMemoryCache();
             services.AddSession(options =>
             {

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace KoiPondConstruct.Data
 {
-    public class UnitOfWork
+    public class UnitOfWork 
     {
         private readonly FA24_SE1702_PRN221_G2_KoiPondConstructContext _context;
         private IDbContextTransaction _transaction; // Declare the transaction field
@@ -13,7 +13,6 @@ namespace KoiPondConstruct.Data
         private CustomerRequestDetailRepository _customerRequestDetailRepository;
         private CustomerRequestRepository _customerRequestRepository;
         private SuggestionRepository _suggestionRepository;
-        private DesginRepository _desginRepository;
 
         public UnitOfWork(FA24_SE1702_PRN221_G2_KoiPondConstructContext context)
         {
@@ -52,16 +51,6 @@ namespace KoiPondConstruct.Data
             }
         }
 
-        #region Design Repo
-        public DesginRepository DesginRepository
-        {
-            get
-            {
-                return _desginRepository ??= new DesginRepository(_context);
-            }
-        }
-
-        #endregion
-
+       
     }
 }

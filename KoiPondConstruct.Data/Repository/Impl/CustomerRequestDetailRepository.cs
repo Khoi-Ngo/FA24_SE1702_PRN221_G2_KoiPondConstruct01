@@ -25,12 +25,5 @@ namespace KoiPondConstruct.Data.Repository.Impl
 
         public  async Task<List<TblCustomerRequestDetail>> GetAllWithMainReuqestAsync()
         => await _context.TblCustomerRequestDetails.Include(d => d.Request).ToListAsync();
-
-
-        public async Task<TblCustomerRequestDetail> GetByIdWithDesignAsync(long id)
-        {
-            return await _context.TblCustomerRequestDetails.Include(k => k.TblDesign).FirstOrDefaultAsync(k => k.Id == id);
-
-        }
     }
 }
