@@ -1,0 +1,102 @@
+﻿@page
+@model KoiPondConstruction.RazorWebApp.Pages.PriceRefer.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPriceRefer[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPriceRefer[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPriceRefer[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPriceRefer[0].Currency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPriceRefer[0].IsDeleted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPriceRefer[0].CreatedTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPriceRefer[0].UpdatedTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPriceRefer[0].CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPriceRefer[0].UpdatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPriceRefer[0].Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPriceRefer[0].Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPriceRefer[0].SizeUnit)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TblPriceRefer) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Currency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDeleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Size)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SizeUnit)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

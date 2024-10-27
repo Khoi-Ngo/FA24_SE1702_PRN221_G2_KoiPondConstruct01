@@ -1,0 +1,60 @@
+﻿@page
+@model KoiPondConstruction.RazorWebApp.Pages.PriceContractCost.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPriceContractCost[0].Count)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPriceContractCost[0].Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPriceContractCost[0].IsDeleted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPriceContractCost[0].PriceRefer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPriceContractCost[0].QuotationCost)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TblPriceContractCost) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Count)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDeleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceRefer.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuotationCost.ApprovedBy)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

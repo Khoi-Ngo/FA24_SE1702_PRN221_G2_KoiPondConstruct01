@@ -1,0 +1,102 @@
+﻿{
+   "CodeGenerationMode": 4,
+   "ContextClassName": "FA24_SE1702_PRN221_G2_KoiPondConstructionContext",
+   "ContextNamespace": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "KoiPondConstruction.Data",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 2,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[dbo].[tbl_customer_request]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbl_customer_request_detail]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbl_design]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbl_feedback]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbl_img_refer]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbl_inspection]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbl_inspection_detail]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbl_price_contract_cost]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbl_price_refer]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbl_quotation_cost]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbl_request_detail_sample_design]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbl_sample_design]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbl_status]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbl_suggestion_doc]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbl_user]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": null,
+   "UncountableWords": null,
+   "UseAsyncStoredProcedureCalls": true,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDateOnlyTimeOnly": true,
+   "UseDbContextSplitting": false,
+   "UseDecimalDataAnnotationForSprocResult": true,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UsePrefixNavigationNaming": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false
+}

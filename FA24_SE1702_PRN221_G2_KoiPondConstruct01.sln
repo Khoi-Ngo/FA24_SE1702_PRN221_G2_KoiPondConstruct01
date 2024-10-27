@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KoiPondConstruction.Data", "KoiPondConstruction.Data\KoiPondConstruction.Data.csproj", "{9D9E4A44-E214-4F43-A7DF-3A4917660DDB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KoiPondConstruction.Common", "KoiPondConstruction.Common\KoiPondConstruction.Common.csproj", "{F491266A-F26D-4758-BD3A-6E9EA98A7249}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KoipondContruction.Service", "KoipondContruction.Service\KoipondContruction.Service.csproj", "{2781483F-E050-4D82-A73F-9DDD31000F78}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KoiPondConstruction.RazorWebApp", "KoiPondConstruction.RazorWebApp\KoiPondConstruction.RazorWebApp.csproj", "{244D591A-E443-40F0-A91C-F2CCDB1BCBC8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuotationCost.WPFAPP", "QuotationCost.WPSAPP\QuotationCost.WPFAPP.csproj", "{6A25D778-473B-4AA8-8CD2-7912603349CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D9E4A44-E214-4F43-A7DF-3A4917660DDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D9E4A44-E214-4F43-A7DF-3A4917660DDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D9E4A44-E214-4F43-A7DF-3A4917660DDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D9E4A44-E214-4F43-A7DF-3A4917660DDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F491266A-F26D-4758-BD3A-6E9EA98A7249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F491266A-F26D-4758-BD3A-6E9EA98A7249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F491266A-F26D-4758-BD3A-6E9EA98A7249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F491266A-F26D-4758-BD3A-6E9EA98A7249}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2781483F-E050-4D82-A73F-9DDD31000F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2781483F-E050-4D82-A73F-9DDD31000F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2781483F-E050-4D82-A73F-9DDD31000F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2781483F-E050-4D82-A73F-9DDD31000F78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{244D591A-E443-40F0-A91C-F2CCDB1BCBC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{244D591A-E443-40F0-A91C-F2CCDB1BCBC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{244D591A-E443-40F0-A91C-F2CCDB1BCBC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{244D591A-E443-40F0-A91C-F2CCDB1BCBC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A25D778-473B-4AA8-8CD2-7912603349CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A25D778-473B-4AA8-8CD2-7912603349CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A25D778-473B-4AA8-8CD2-7912603349CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A25D778-473B-4AA8-8CD2-7912603349CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7CCB99E9-B06D-49BE-8CF2-4A050D3FD230}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,105 @@
+﻿@page
+@model KoiPondConstruction.RazorWebApp.Pages.QuotationCost.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<form method="get">
+    <input type="text" name="SearchTerm" value="@Model.SearchTerm" placeholder="Search by ContentText or ID..." />
+    <button type="submit">Search</button>
+</form>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TblQuotationCost[0].CreatedTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblQuotationCost[0].UpdatedTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblQuotationCost[0].CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblQuotationCost[0].ApprovedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblQuotationCost[0].ApprovedTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblQuotationCost[0].ContentText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblQuotationCost[0].File)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblQuotationCost[0].Note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblQuotationCost[0].Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblQuotationCost[0].Currency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblQuotationCost[0].IsDeleted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblQuotationCost[0].RequestDetail)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TblQuotationCost) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApprovedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApprovedTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContentText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.File)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Currency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDeleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestDetail.Address)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

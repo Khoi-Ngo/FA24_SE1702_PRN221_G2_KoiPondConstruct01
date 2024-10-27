@@ -1,0 +1,90 @@
+﻿@page
+@model KoiPondConstruction.RazorWebApp.Pages.QuotationCost.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TblQuotationCost</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TblQuotationCost.Id" />
+            <div class="form-group">
+                <label asp-for="TblQuotationCost.RequestDetailId" class="control-label"></label>
+                <select asp-for="TblQuotationCost.RequestDetailId" class="form-control" asp-items="ViewBag.RequestDetailId"></select>
+                <span asp-validation-for="TblQuotationCost.RequestDetailId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblQuotationCost.CreatedTime" class="control-label"></label>
+                <input asp-for="TblQuotationCost.CreatedTime" class="form-control" />
+                <span asp-validation-for="TblQuotationCost.CreatedTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblQuotationCost.UpdatedTime" class="control-label"></label>
+                <input asp-for="TblQuotationCost.UpdatedTime" class="form-control" />
+                <span asp-validation-for="TblQuotationCost.UpdatedTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblQuotationCost.CreatedBy" class="control-label"></label>
+                <input asp-for="TblQuotationCost.CreatedBy" class="form-control" />
+                <span asp-validation-for="TblQuotationCost.CreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblQuotationCost.ApprovedBy" class="control-label"></label>
+                <input asp-for="TblQuotationCost.ApprovedBy" class="form-control" />
+                <span asp-validation-for="TblQuotationCost.ApprovedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblQuotationCost.ApprovedTime" class="control-label"></label>
+                <input asp-for="TblQuotationCost.ApprovedTime" class="form-control" />
+                <span asp-validation-for="TblQuotationCost.ApprovedTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblQuotationCost.ContentText" class="control-label"></label>
+                <input asp-for="TblQuotationCost.ContentText" class="form-control" />
+                <span asp-validation-for="TblQuotationCost.ContentText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblQuotationCost.File" class="control-label"></label>
+                <input asp-for="TblQuotationCost.File" class="form-control" />
+                <span asp-validation-for="TblQuotationCost.File" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblQuotationCost.Note" class="control-label"></label>
+                <input asp-for="TblQuotationCost.Note" class="form-control" />
+                <span asp-validation-for="TblQuotationCost.Note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblQuotationCost.Total" class="control-label"></label>
+                <input asp-for="TblQuotationCost.Total" class="form-control" />
+                <span asp-validation-for="TblQuotationCost.Total" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblQuotationCost.Currency" class="control-label"></label>
+                <input asp-for="TblQuotationCost.Currency" class="form-control" />
+                <span asp-validation-for="TblQuotationCost.Currency" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TblQuotationCost.IsDeleted" /> @Html.DisplayNameFor(model => model.TblQuotationCost.IsDeleted)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

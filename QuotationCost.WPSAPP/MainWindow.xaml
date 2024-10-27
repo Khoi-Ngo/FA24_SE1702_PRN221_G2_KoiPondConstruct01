@@ -1,0 +1,92 @@
+﻿<Window x:Class="QuotationCost.WPSAPP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuotationCost.WPSAPP"
+        mc:Ignorable="d"
+        Title="QuotationCost Management" Height="500" Width="850" Loaded="Window_Loaded">
+    <Grid Margin="10">
+        <!-- Cấu hình cột và hàng -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            
+        </Grid.RowDefinitions>
+
+        <!-- INPUT Section -->
+        <Label Content="INPUT" Grid.Row="0" Grid.Column="0" FontSize="14" />
+        <Label Content="Total" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtTotal" Grid.Row="1" Grid.Column="1" Width="200" Height="22" VerticalAlignment="Center"/>
+
+        <Label Content="Currency" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtCurrency" Grid.Row="2" Grid.Column="1" Width="200" Height="22" VerticalAlignment="Center"/>
+
+        <Label Content="ContentText" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtContentText" Grid.Row="3" Grid.Column="1" Width="200" Height="22" VerticalAlignment="Center"/>
+
+        <Label Content="CreatedBy" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtCreatedBy" Grid.Row="4" Grid.Column="1" Width="200" Height="22" VerticalAlignment="Center"/>
+
+        <Label Content="ApprovedBy" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtApprovedBy" Grid.Row="2" Grid.Column="4" Width="200" Height="22" VerticalAlignment="Center"/>
+
+        <Label Content="File" Grid.Column="2" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="1,27,206,0" Grid.RowSpan="2"/>
+        <TextBox x:Name="txtFile" Grid.Row="1" Grid.Column="4" Width="200" Height="22" VerticalAlignment="Center"/>
+
+        <Label Content="Note" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtNote" Grid.Row="3" Grid.Column="4" Width="200" Height="50" VerticalAlignment="Center" TextWrapping="Wrap"/>
+
+        <CheckBox x:Name="cbIsDeleted" Grid.Row="4" Grid.Column="4" Content="Is Deleted" VerticalAlignment="Center" />
+
+        <!-- SEARCH Section -->
+        <Label Content="SEARCH" Grid.Row="5" Grid.Column="0" FontSize="14"/>
+
+        <Label Content="CreatedBy" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtSearchCreatedBy" Grid.Row="7" Grid.Column="0" Width="200" Height="22" VerticalAlignment="Center"/>
+
+        <Label Content="ApprovedBy" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtSearchApprovedBy" Grid.Row="7" Grid.Column="1" Width="200" Height="22" VerticalAlignment="Center"/>
+
+        <Label Content="ContentText" Grid.Row="6" Grid.Column="2" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtSearchContentText" Grid.Row="7" Grid.Column="2" Width="200" Height="22" VerticalAlignment="Center"/>
+
+        <Button x:Name="btnSearch" Content="Search" Grid.Row="7" Grid.Column="4" Width="80" Height="25" Margin="5" VerticalAlignment="Center" Click="BtnSearch_Click"/>
+
+        <!-- Buttons Section -->
+        <StackPanel Grid.Row="6" Grid.Column="4" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button x:Name="btnSave" Content="Save" Width="60" Height="25" Margin="5" VerticalAlignment="Center" Click="BtnSave_Click"/>
+            <Button x:Name="btnDelete" Content="Delete" Width="60" Height="25" Margin="5" VerticalAlignment="Center" Click="BtnDelete_Click"/>
+            <Button x:Name="btnReset" Content="Reset" Width="60" Height="25" Margin="5" VerticalAlignment="Center" Click="BtnReset_Click"/>
+        </StackPanel>
+
+        <!-- ListView Section -->
+        <ListView x:Name="lvQuotationCost" Grid.Row="8" Grid.ColumnSpan="4" Margin="0,10,0,0" MouseDoubleClick="lvQuotationCost_MouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Total" DisplayMemberBinding="{Binding Total}" Width="100"/>
+                    <GridViewColumn Header="Currency" DisplayMemberBinding="{Binding Currency}" Width="100"/>
+                    <GridViewColumn Header="ContentText" DisplayMemberBinding="{Binding ContentText}" Width="100"/>
+                    <GridViewColumn Header="CreatedBy" DisplayMemberBinding="{Binding CreatedBy}" Width="100"/>
+                    <GridViewColumn Header="ApprovedBy" DisplayMemberBinding="{Binding ApprovedBy}" Width="100"/>
+                    <GridViewColumn Header="File" DisplayMemberBinding="{Binding File}" Width="100"/>
+                    <GridViewColumn Header="Note" DisplayMemberBinding="{Binding Note}" Width="150"/>
+                    <GridViewColumn Header="IsDeleted" DisplayMemberBinding="{Binding IsDeleted}" Width="80"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

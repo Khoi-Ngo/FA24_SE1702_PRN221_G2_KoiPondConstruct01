@@ -1,0 +1,94 @@
+﻿@page
+@model KoiPondConstruction.RazorWebApp.Pages.PriceRefer.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>TblPriceRefer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TblPriceRefer.Id" class="control-label"></label>
+                <input asp-for="TblPriceRefer.Id" class="form-control" />
+                <span asp-validation-for="TblPriceRefer.Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPriceRefer.Title" class="control-label"></label>
+                <input asp-for="TblPriceRefer.Title" class="form-control" />
+                <span asp-validation-for="TblPriceRefer.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPriceRefer.Description" class="control-label"></label>
+                <input asp-for="TblPriceRefer.Description" class="form-control" />
+                <span asp-validation-for="TblPriceRefer.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPriceRefer.Price" class="control-label"></label>
+                <input asp-for="TblPriceRefer.Price" class="form-control" />
+                <span asp-validation-for="TblPriceRefer.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPriceRefer.Currency" class="control-label"></label>
+                <input asp-for="TblPriceRefer.Currency" class="form-control" />
+                <span asp-validation-for="TblPriceRefer.Currency" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TblPriceRefer.IsDeleted" /> @Html.DisplayNameFor(model => model.TblPriceRefer.IsDeleted)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPriceRefer.CreatedTime" class="control-label"></label>
+                <input asp-for="TblPriceRefer.CreatedTime" class="form-control" />
+                <span asp-validation-for="TblPriceRefer.CreatedTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPriceRefer.UpdatedTime" class="control-label"></label>
+                <input asp-for="TblPriceRefer.UpdatedTime" class="form-control" />
+                <span asp-validation-for="TblPriceRefer.UpdatedTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPriceRefer.CreatedBy" class="control-label"></label>
+                <input asp-for="TblPriceRefer.CreatedBy" class="form-control" />
+                <span asp-validation-for="TblPriceRefer.CreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPriceRefer.UpdatedBy" class="control-label"></label>
+                <input asp-for="TblPriceRefer.UpdatedBy" class="form-control" />
+                <span asp-validation-for="TblPriceRefer.UpdatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPriceRefer.Type" class="control-label"></label>
+                <input asp-for="TblPriceRefer.Type" class="form-control" />
+                <span asp-validation-for="TblPriceRefer.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPriceRefer.Size" class="control-label"></label>
+                <input asp-for="TblPriceRefer.Size" class="form-control" />
+                <span asp-validation-for="TblPriceRefer.Size" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPriceRefer.SizeUnit" class="control-label"></label>
+                <input asp-for="TblPriceRefer.SizeUnit" class="form-control" />
+                <span asp-validation-for="TblPriceRefer.SizeUnit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
