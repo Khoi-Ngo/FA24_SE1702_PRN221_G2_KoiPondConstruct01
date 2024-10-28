@@ -57,7 +57,7 @@ namespace KoiPondConstruct.RazorApp.Pages.CusRequest
                 return NotFound();
             }
             //call service to delete all customer and other relations
-            _customerRequestService.DeleteByIdAsync(id);
+            await _customerRequestService.DeleteByIdAsync(id);
 
             return RedirectToPage("./Index");
         }
